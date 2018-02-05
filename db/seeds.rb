@@ -7,7 +7,7 @@ Task.transaction do
   quest_list.tasks.create!([
     {
       title: 'Slay the medusa',
-      description: "It's been turning all the dwarves to stone. *Don't make eye contact!* Reward: 200 gold pieces.",
+      description: "It's been turning all the dwarves to stone. *Don't make eye contact!*\nReward: 200 gold pieces.",
       status: Task::STATUS_INCOMPLETE
     },
     {
