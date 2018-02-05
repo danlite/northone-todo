@@ -6,13 +6,11 @@ Task.transaction do
 
   quest_list.tasks.create!([
     {
-      list_index: 0,
       title: 'Slay the medusa',
       description: "It's been turning all the dwarves to stone. *Don't make eye contact!* Reward: 200 gold pieces.",
       status: Task::STATUS_INCOMPLETE
     },
     {
-      list_index: 1,
       title: 'Interrogate Kobold Gayfeather',
       description: "We captured the charlatan but he refuses to tell us where the dragon cult is plotting their coup.",
       status: Task::STATUS_IN_PROGRESS,
