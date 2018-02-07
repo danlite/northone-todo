@@ -1,8 +1,8 @@
 class TaskListsController < ApplicationController
-  def show
-    list = TaskList.find(params[:id])
+  before_action :set_task_list, only: [:show, :destroy]
 
-    render_result serialize_records(list)
+  def show
+    render_result serialize_records(@task_list)
   end
 
   def create
@@ -11,7 +11,17 @@ class TaskListsController < ApplicationController
     render_result serialize_records(list)
   end
 
+  def destroy
+    @task_list.destroy!
+
+    render_result
+  end
+
   protected
+
+  def set_task_list
+    @task_list = TaskList.find(params[:id])
+  end
 
   def serialize_records(records)
     TaskListSerializer.new(records, include: [:tasks]).serializable_hash
